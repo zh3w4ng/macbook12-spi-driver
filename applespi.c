@@ -59,7 +59,6 @@
 #include <linux/ktime.h>
 #include <linux/input.h>
 #include <linux/input/mt.h>
-#include <linux/input-polldev.h>
 
 #include <linux/version.h>
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4, 14, 0)
