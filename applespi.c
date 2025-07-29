@@ -1718,7 +1718,7 @@ static int applespi_probe(struct spi_device *spi)
 	return 0;
 }
 
-static int applespi_remove(struct spi_device *spi)
+static void applespi_remove(struct spi_device *spi)
 {
 	struct applespi_data *applespi = spi_get_drvdata(spi);
 	unsigned long flags;
@@ -1746,7 +1746,6 @@ static int applespi_remove(struct spi_device *spi)
 
 	/* done */
 	pr_info("spi-device remove done: %s\n", dev_name(&spi->dev));
-	return 0;
 }
 
 #ifdef CONFIG_PM
