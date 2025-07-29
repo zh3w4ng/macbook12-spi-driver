@@ -575,7 +575,7 @@ static void applespi_setup_read_txfrs(struct applespi_data *applespi)
 	memset(dl_t, 0, sizeof(*dl_t));
 	memset(rd_t, 0, sizeof(*rd_t));
 
-	dl_t->delay = {
+	dl_t->delay = (struct spi_delay){
 		.value = applespi->spi_settings.spi_cs_delay,
 		.unit = SPI_DELAY_UNIT_USECS,
 	};
@@ -599,7 +599,7 @@ static void applespi_setup_write_txfrs(struct applespi_data *applespi)
 	memset(wr_t, 0, sizeof(*wr_t));
 	memset(st_t, 0, sizeof(*st_t));
 
-	dl_t->delay = {
+	dl_t->delay = (struct spi_delay){
 		.value = applespi->spi_settings.spi_cs_delay,
 		.unit = SPI_DELAY_UNIT_USECS,
 	};
@@ -607,7 +607,7 @@ static void applespi_setup_write_txfrs(struct applespi_data *applespi)
 	wr_t->tx_buf = applespi->tx_buffer;
 	wr_t->len = APPLESPI_PACKET_SIZE;
 	
-	wr_t->delay = {
+	wr_t->delay = (struct spi_delay){
 		.value = SPI_RW_CHG_DLY,
 		.unit = SPI_DELAY_UNIT_USECS,
 	};
