@@ -18,7 +18,7 @@ As root, do the following (all MacBook's and MacBook Pro's except MacBook8,1 (20
 echo -e "\n# applespi\napplespi\nspi_pxa2xx_platform\nintel_lpss_pci" >> /etc/initramfs-tools/modules
 
 apt install dkms
-git clone https://github.com/cb22/macbook12-spi-driver.git /usr/src/applespi-0.1
+git clone https://github.com/zh3w4ng/macbook12-spi-driver.git /usr/src/applespi-0.1
 dkms install -m applespi -v 0.1
 ```
 
@@ -29,6 +29,14 @@ echo -e "\n# applespi\napplespi\nspi_pxa2xx_platform\nspi_pxa2xx_pci" >> /etc/in
 apt install dkms
 git clone https://github.com/zh3w4ng/macbook12-spi-driver.git /usr/src/applespi-0.1
 dkms install -m applespi -v 0.1
+```
+
+Kernel boot options:
+--------------------
+In my case, on MacBook 12inch 2017 (Model Code: MacBook10,1), this kernel boot option is added to GRUB (between `quiet` and `splash`) to make the keyboard and trackpad finally work.
+
+```
+intel_iommu=off
 ```
 
 What works:
