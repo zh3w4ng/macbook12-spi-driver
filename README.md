@@ -27,7 +27,7 @@ If you're on a MacBook8,1 (2015):
 echo -e "\n# applespi\napplespi\nspi_pxa2xx_platform\nspi_pxa2xx_pci" >> /etc/initramfs-tools/modules
 
 apt install dkms
-git clone https://github.com/cb22/macbook12-spi-driver.git /usr/src/applespi-0.1
+git clone https://github.com/zh3w4ng/macbook12-spi-driver.git /usr/src/applespi-0.1
 dkms install -m applespi -v 0.1
 ```
 
